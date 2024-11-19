@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamsoft.framework.sys.mapper.ParamConfigMapper">
+	<select id="list" resultType="ParamConfig">
+		SELECT *
+		FROM SYS_PARAM_CONFIG
+		WHERE SHOW_FLAG = 1
+		ORDER BY SORT_ORDER
+	</select>
+	<select id="listByEntity" resultType="ParamConfig">
+		SELECT *
+		FROM SYS_PARAM_CONFIG
+		WHERE (FOO1 IS NULL OR FOO1 != 'SPLIT_SYMBOL')
+		ORDER BY SORT_ORDER
+	</select>
+	<select id="getByParamKey" resultType="ParamConfig">
+		SELECT *
+		FROM SYS_PARAM_CONFIG
+		WHERE PARAM_KEY = #{key}
+		LIMIT 1
+	</select>
+	<update id="update">
+		UPDATE SYS_PARAM_CONFIG
+		SET PARAM_KEY   = #{entity.paramKey},
+			PARAM_VALUE = #{entity.paramValue},
+			FOO1       = #{entity.foo1},
+			FOO2       = #{entity.foo2}
+		WHERE PARAM_KEY = #{entity.paramKey}
+	</update>
+	<update id="updateAll">
+		<foreach collection="entities" item="entity" separator=";">
+			UPDATE SYS_PARAM_CONFIG
+			SET PARAM_VALUE = #{entity.paramValue}
+			WHERE PARAM_KEY = #{entity.paramKey}
+		</foreach>
+	</update>
+</mapper>

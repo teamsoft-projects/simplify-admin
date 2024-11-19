@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamsoft.framework.sys.mapper.RoleMapper">
+	<select id="list" resultType="Role">
+		SELECT *
+		FROM SYS_ROLE
+		ORDER BY SORT_ORDER
+		<if test="page != null">
+			LIMIT ${page.pageStart}, ${page.pageSize}
+		</if>
+	</select>
+	<select id="count" resultType="Integer">
+		SELECT count(1)
+		FROM SYS_ROLE
+	</select>
+	<select id="get" resultType="Role">
+		SELECT *
+		FROM SYS_ROLE
+		WHERE ID = #{id}
+		LIMIT 1
+	</select>
+	<insert id="save">
+		INSERT INTO SYS_ROLE
+			(ID, NAME, DESCRIPTION, SORT_ORDER)
+		VALUES (#{entity.id}, #{entity.name}, #{entity.description}, #{entity.sortOrder})
+	</insert>
+	<update id="update">
+		UPDATE SYS_ROLE
+		SET NAME        = #{entity.name},
+		    DESCRIPTION = #{entity.description},
+		    SORT_ORDER   = #{entity.sortOrder}
+		WHERE ID = #{entity.id}
+	</update>
+	<delete id="removeAll">
+		DELETE FROM SYS_ROLE
+		WHERE ID IN
+		<foreach collection="ids" item="item" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+	</delete>
+	<select id="getMaxSort" resultType="Integer">
+		SELECT IF(MAX IS NULL, 1, MAX + 1) SORT
+		FROM (SELECT max(SORT_ORDER) MAX
+		      FROM SYS_ROLE) T
+	</select>
+	<delete id="removeRoleMenuFunc">
+		DELETE
+		FROM SYS_ROLE_MENU
+		WHERE ROLE_ID = #{roleId};
+		DELETE
+		FROM SYS_ROLE_MENU_FUNCTION
+		WHERE ROLE_ID = #{roleId}
+	</delete>
+	<insert id="saveRoleMenu" parameterType="com.teamsoft.framework.sys.vo.RoleMenuFuncVO">
+		INSERT INTO SYS_ROLE_MENU
+		(ID, ROLE_ID, MENU_ID)
+		VALUES
+		<foreach collection="entities" item="item" separator=",">
+			(#{item.id}, #{item.roleId}, #{item.menuId})
+		</foreach>
+	</insert>
+	<insert id="saveRoleMenuFunc" parameterType="com.teamsoft.framework.sys.vo.RoleMenuFuncVO">
+		INSERT INTO SYS_ROLE_MENU_FUNCTION
+		(ID, ROLE_ID, MENU_ID, FUNC_ID)
+		VALUES
+		<foreach collection="entities" item="item" separator=",">
+			(#{item.id}, #{item.roleId}, #{item.menuId}, #{item.funcId})
+		</foreach>
+	</insert>
+</mapper>

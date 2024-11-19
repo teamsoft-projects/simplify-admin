@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamsoft.framework.sys.mapper.UserMapper">
+	<select id="listByEntity" resultType="User">
+		SELECT USER.*, ROLE.ID ROLEID, ROLE.NAME ROLENAME
+		FROM SYS_USER USER
+		LEFT JOIN SYS_ROLE ROLE ON USER.ROLE_ID = ROLE.ID
+		<where>
+			<if test="entity.loginName != null and entity.loginName != ''">
+				AND USER.LOGIN_NAME LIKE concat('%', #{entity.loginName}, '%')
+			</if>
+			<if test="entity.name != null and entity.name != ''">
+				AND USER.NAME LIKE CONCAT('%', #{entity.name}, '%')
+			</if>
+			<if test="entity.sortMin != null and entity.sortMin != ''">
+				AND USER.SORT_ORDER &gt;= #{entity.sortMin}
+			</if>
+			<if test="entity.sortMax != null and entity.sortMax != ''">
+				AND USER.SORT_ORDER &lt;= #{entity.sortMax}
+			</if>
+			<if test="entity.mobile != null and entity.mobile != ''">
+				AND USER.MOBILE LIKE CONCAT('%', #{entity.mobile}, '%')
+			</if>
+			<if test="entity.roleId != null and entity.roleId != ''">
+				AND USER.ROLE_ID=#{entity.roleId}
+			</if>
+		</where>
+		ORDER BY SORT_ORDER
+		<if test="page != null">
+			LIMIT ${page.pageStart}, ${page.pageSize}
+		</if>
+	</select>
+	<select id="countByEntity" resultType="Integer">
+		SELECT count(1)
+		FROM SYS_USER USER
+		<where>
+			<if test="entity.loginName != null and entity.loginName != ''">
+				AND USER.LOGIN_NAME LIKE concat('%', #{entity.loginName}, '%')
+			</if>
+			<if test="entity.name != null and entity.name != ''">
+				AND USER.NAME LIKE CONCAT('%', #{entity.name}, '%')
+			</if>
+			<if test="entity.sortMin != null and entity.sortMin != ''">
+				AND USER.SORT_ORDER &gt;= #{entity.sortMin}
+			</if>
+			<if test="entity.sortMax != null and entity.sortMax != ''">
+				AND USER.SORT_ORDER &lt;= #{entity.sortMax}
+			</if>
+			<if test="entity.mobile != null and entity.mobile != ''">
+				AND USER.MOBILE LIKE CONCAT('%', #{entity.mobile}, '%')
+			</if>
+			<if test="entity.roleId != null and entity.roleId != ''">
+				AND USER.ROLE_ID=#{entity.roleId}
+			</if>
+		</where>
+	</select>
+	<select id="get" resultType="User">
+		SELECT *
+		FROM SYS_USER
+		WHERE ID = #{id}
+		LIMIT 1
+	</select>
+	<select id="getByEntity" resultType="User">
+		SELECT *
+		FROM SYS_USER
+		<where>
+			<if test="entity.loginName != null">
+				AND LOGIN_NAME = #{entity.loginName}
+			</if>
+			<if test="entity.password != null">
+				AND `PASSWD` = #{entity.password}
+			</if>
+		</where>
+		LIMIT 1
+	</select>
+	<insert id="save">
+		INSERT INTO SYS_USER
+		(ID, LOGIN_NAME, NAME, PASSWD, ROLE_ID, MOBILE, DESCRIPTION, SORT_ORDER, IS_DEFAULT_PASSWD, CREATE_TIME)
+		VALUES
+			(#{entity.id}, #{entity.loginName}, #{entity.name}, #{entity.password}, #{entity.roleId}, #{entity.mobile},
+			 #{entity.description}, #{entity.sortOrder}, 1, NOW())
+	</insert>
+	<update id="update">
+		UPDATE SYS_USER
+		SET LOGIN_NAME   = #{entity.loginName},
+		    NAME        = #{entity.name},
+		    ROLE_ID      = #{entity.roleId},
+		    MOBILE      = #{entity.mobile},
+		    DESCRIPTION = #{entity.description},
+		    SORT_ORDER   = #{entity.sortOrder}
+		WHERE ID = #{entity.id}
+	</update>
+	<update id="updatePasswd">
+		UPDATE SYS_USER
+		SET PASSWD          = #{entity.password},
+		    IS_DEFAULT_PASSWD = 0
+		WHERE ID = #{entity.id}
+	</update>
+	<update id="resetPasswd">
+		UPDATE SYS_USER
+		SET PASSWD          = #{entity.password},
+			IS_DEFAULT_PASSWD = 1
+		WHERE ID = #{entity.id}
+	</update>
+	<delete id="removeAll">
+		DELETE FROM SYS_USER
+		WHERE ID IN
+		<foreach collection="ids" item="item" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+	</delete>
+	<select id="getMaxSort" resultType="Integer">
+		SELECT IF(MAX IS NULL, 1, MAX + 1) SORT
+		FROM (SELECT max(SORT_ORDER) MAX
+		      FROM SYS_USER) T
+	</select>
+</mapper>

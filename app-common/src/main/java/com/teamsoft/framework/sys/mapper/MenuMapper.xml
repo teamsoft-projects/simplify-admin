@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamsoft.framework.sys.mapper.MenuMapper">
+	<select id="list" resultType="Menu">
+		SELECT *
+		FROM SYS_MENU
+		ORDER BY PARENT_ID, SORT_ORDER
+	</select>
+	<select id="listByEntity" resultType="Menu">
+		SELECT MENU.*
+		FROM SYS_MENU MENU
+		<if test="entity.roleId != null">
+			INNER JOIN SYS_ROLE_MENU ROLEMENU ON MENU.ID=ROLEMENU.MENU_ID AND ROLEMENU.ROLE_ID=#{entity.roleId}
+		</if>
+		<where>
+			<if test="entity.parentId != null">
+				AND MENU.PARENT_ID = #{entity.parentId}
+			</if>
+			<if test="entity.parentIdNe != null">
+				AND MENU.PARENT_ID != #{entity.parentIdNe}
+			</if>
+		</where>
+		ORDER BY MENU.SORT_ORDER
+		<if test="page != null">
+			LIMIT ${page.pageStart} ${page.pageSize}
+		</if>
+	</select>
+	<select id="get" resultType="Menu">
+		SELECT *
+		FROM SYS_MENU
+		WHERE ID = #{id}
+		LIMIT 1
+	</select>
+	<insert id="save">
+		INSERT INTO SYS_MENU
+		(ID, PARENT_ID, NAME, ICON, URL, SORT_ORDER, CREATE_TIME)
+		VALUES (#{entity.id}, #{entity.parentId}, #{entity.name}, #{entity.icon}, #{entity.url}, #{entity.sortOrder}, NOW())
+	</insert>
+	<update id="update">
+		UPDATE SYS_MENU
+		SET PARENT_ID = #{entity.parentId},
+			NAME     = #{entity.name},
+			ICON     = #{entity.icon},
+			URL      = #{entity.url},
+			SORT_ORDER     = #{entity.sortOrder}
+		WHERE ID = #{entity.id}
+	</update>
+	<delete id="removeAll">
+		DELETE FROM SYS_MENU
+		WHERE ID IN
+		<foreach collection="ids" item="item" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+	</delete>
+	<select id="getMenuMaxSort" resultType="java.lang.Integer">
+		SELECT IF(MAX IS NULL, 1, MAX + 1) SORT
+		FROM (SELECT max(SORT_ORDER) MAX
+		      FROM SYS_MENU
+		      WHERE PARENT_ID = #{parentId}) T
+	</select>
+	<select id="getMenuWithRoleFunc" resultMap="menuWithFuncMap">
+		SELECT MENU.*,
+		       FUNC.ID                       MENUFUNCID,
+		       FUNC.NAME                     FUNCNAME,
+		       FUNC.ICON                     FUNCICON,
+		       FUNC.URL                      FUNCURL,
+		       FUNC.DESCRIPTION              FUNCDESC,
+		       IF(ROLEMENU.ID IS NULL, 0, 1) HASAUTH,
+		       IF(ROLEFUNC.ID IS NULL, 0, 1) FUNCHASAUTH
+		FROM SYS_MENU                    MENU
+		LEFT JOIN SYS_MENU_FUNCTION      FUNC ON MENU.ID = FUNC.MENU_ID
+		LEFT JOIN SYS_ROLE_MENU          ROLEMENU ON MENU.ID = ROLEMENU.MENU_ID AND ROLEMENU.ROLE_ID = #{roleId}
+		LEFT JOIN SYS_ROLE_MENU_FUNCTION ROLEFUNC ON FUNC.ID = ROLEFUNC.FUNC_ID AND ROLEFUNC.ROLE_ID = #{roleId}
+		ORDER BY MENU.SORT_ORDER, FUNC.SORT_ORDER
+	</select>
+	<resultMap id="menuWithFuncMap" type="Menu">
+		<result property="id" column="ID"/>
+		<result property="parentId" column="PARENT_ID"/>
+		<result property="name" column="NAME"/>
+		<result property="icon" column="ICON"/>
+		<result property="url" column="URL"/>
+		<result property="hasAuth" column="HASAUTH"/>
+		<collection property="funcs" javaType="List" ofType="MenuFunction">
+			<result property="id" column="MENUFUNCID"/>
+			<result property="name" column="FUNCNAME"/>
+			<result property="icon" column="FUNCICON"/>
+			<result property="url" column="FUNCURL"/>
+			<result property="description" column="FUNCDESC"/>
+			<result property="hasAuth" column="FUNCHASAUTH"/>
+		</collection>
+	</resultMap>
+</mapper>

@@ -1,0 +1,662 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Adobe Heiti Std, serif;
+}
+/*  头部  start  */
+.download-title{
+    width: 1300px;
+    height: 100px;
+    /*border: 1px solid red;*/
+    margin: 0 auto;
+    display: flex;
+}
+.top-box-img{
+    /*border: 1px solid red;*/
+    width: 150px;
+    height: 50px;
+    background-image: url("../images/logo.png");
+    background-size: 100% 100%;
+    margin-top: 25px;
+}
+.top-box-center{
+    width: 330px;
+    height: 30px;
+    position: relative;
+    color: black;
+    font-size: 15px;
+    top: 35%;
+    left: 55%;
+}
+.top-box-center a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+.top-box-center span{
+    cursor:pointer;
+    margin-left: 46px;
+}
+.top-box-lang{
+    height: 30px;
+    position: relative;
+    left: 60%;
+    top: 35%;
+    cursor:pointer;
+}
+.arrow{
+    position: absolute;
+    top: 8px;
+    left: 40px;
+}
+.top-box-lang >img:nth-child(2){
+    width: 15px;
+    height: 8px;
+}
+
+@media screen and (max-width: 480px) {
+    .download-title{
+        display: none;
+    }
+}
+
+/*  头部 end  */
+
+/*   移动端右上角start  */
+.top-lang-center{
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    width: 80px;
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+    margin-left: -22px;
+}
+.top-lang-center img{
+    width: 34px;
+    height: 22px;
+    margin: 5px auto;
+    display: block;
+}
+.RightLogo-box{
+    width: 120px;
+    height: 150px;
+    position: absolute;
+    padding-top: 20px;
+    color: white;
+    top: 50px;
+    right: 14px;
+    font-size: 14px;
+    text-align: center;
+    background-size: 100% 100%;
+    background-image: url("../images/RightLogo-box.png");
+    z-index: 2000;
+}
+.RightLogo-box div{
+    color: black;
+    margin-bottom: 16px;
+}
+.RightLogo-box a{
+    color: white;
+}
+.RightLogo-box div:nth-child(1){
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 auto 16px auto;
+    border-radius: 10px;
+    background: white;
+    border:1px solid rgba(75,129,255,1);
+    color:rgba(95,179,255,1);
+}
+
+@media screen and (max-width: 480px) {
+    .lang-background-box,.lang-background-EN{
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        font-size: 15px;
+        line-height: 20px;
+        position: relative;
+        left: 8px;
+    }
+    .lang-background-box{
+        left: -8px;
+        top: 1px;
+    }
+    #RightLogo{
+        display: block;
+        position: absolute;
+        right: 32px;
+        top: 10px;
+        width: 8px;
+        height: 30px;
+        z-index: 900;
+    }
+    .lang-background-center{
+        display: inline-block;
+        position: absolute;
+        right: 32px;
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        background-image: url("../images/lang background center.png");
+    }
+}
+/*   移动端右上角end  */
+
+/*   下载区域 start  */
+.download-area{
+    width: 100%;
+    min-width: 1300px;
+    height: 900px;
+    background-image: url("../images/download_background.png");
+    background-size: 100% 100%;
+}
+.download-area-box{
+    display: flex;
+    width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    /*border: 1px solid #ccc;*/
+    justify-content: space-between;
+}
+.download-area-left{
+    width: 50%;
+    height: 500px;
+    /*border: 1px solid #ccc;*/
+    margin-top: 140px;
+    color: white;
+}
+.download-area-right{
+    width: 40%;
+    height: 500px;
+    margin-top: 40px;
+}
+.download-area-right p{
+    width: 350px;
+    height: 720px;
+    margin-left: 50px;
+    background-image: url("../images/phone.png");
+    background-size: 100% 100%;
+}
+.download-area-left p:nth-child(1){
+    font-size: 48px;
+}
+.download-area-left p:nth-child(2){
+    font-size: 30px;
+}
+.download-content{
+    display: flex;
+    /*border: 1px solid #ccc;*/
+    justify-content: space-between;
+}
+.ios-box,.android-box{
+    width: 305px;
+    height: 80px;
+    /*border: 1px solid #ccc;*/
+    margin-top: 30px;
+    font-size:28px;
+    cursor: pointer;
+    text-align: center;
+}
+.ios-box{
+    background: black;
+    line-height: 80px;
+}
+.android-box{
+    background: #A5C845;
+    line-height: 80px;
+}
+.ios-img{
+    display: inline-block;
+    width: 43px;
+    height: 53px;
+    background-image: url("../images/ios.png");
+    background-size: 100% 100%;
+    position: relative;
+    top: 13px;
+    left: 5px;
+}
+.android-img{
+    display: inline-block;
+    width: 43px;
+    height: 53px;
+    background-image: url("../images/android.png");
+    background-size: 100% 100%;
+    position: relative;
+    top: 13px;
+    left: 5px;
+}
+.download-content-right{
+    text-align: center;
+    margin-top: 30px;
+}
+.QR-code{
+    border: 1px solid #ccc;
+    width: 192px;
+    height: 192px;
+    margin: 0 auto;
+}
+.download-content-left{
+    padding-bottom: 20px;
+}
+.mobile-top{
+    display: none;
+}
+.mobile-download-box{
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .mobile-download-box{
+        display: inline;
+    }
+    .download-area{
+        min-width: 300px;
+    }
+    .download-area-box{
+        display: none;
+    }
+    .mobile-top{
+        display: flex;
+        width: 100%;
+    }
+    .mobile-logo{
+        width: 80px;
+        height: 22px;
+        background-image: url("../images/logo.png");
+        background-size: 100% 100%;
+        margin-left: 20px;
+    }
+    .mobile-setup{
+        margin: 0;
+        width: 9px;
+        height: 53px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .mobile-img{
+        width: 180px;
+        height: 370px;
+        background-image: url("../images/phone.png");
+        background-size: 100% 100%;
+        margin: 30px auto;
+    }
+    .digital-assets{
+        text-align: center;
+        font-size: 18px;
+        color: white;
+    }
+    .management-tool{
+        text-align: center;
+        font-size: 12px;
+        color: white;
+    }
+    .mobile-download{
+        width: 80%;
+        height: 150px;
+        margin: 80px auto;
+        /*border: 1px solid #ccc;*/
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+    .mobile-download-ios{
+        width: 120px;
+        height: 40px;
+        background:rgba(0,0,0,1);
+        box-shadow:0 6px 20px 0 rgba(13,55,140,0.25);
+        border-radius:10px;
+    }
+    .mobile-download-android{
+        width: 120px;
+        height: 40px;
+        background:rgba(165,200,69,1);
+        box-shadow:0 6px 20px 0 rgba(13,55,140,0.25);
+        border-radius:10px;
+    }
+    .mobile-download-ios-img{
+        display: inline-block;
+        width: 16px;
+        height: 19px;
+        background-image: url("../images/ios.png");
+        background-size: 100% 100%;
+        position: relative;
+        left: 10px;
+        top: 10px;
+        vertical-align: super;
+    }
+    .mobile-download-android-img{
+        display: inline-block;
+        width: 16px;
+        height: 19px;
+        background-image: url("../images/android.png");
+        background-size: 100% 100%;
+        position: relative;
+        left: 10px;
+        top: 10px;
+        vertical-align: super;
+    }
+    .mobile-download-ios-text{
+        display: inline-block;
+        margin-left: 10px;
+        height: 100%;
+        line-height: 30px;
+    }
+    .mobile-download-android-text{
+        display: inline-block;
+        margin-left: 10px;
+        height: 100%;
+        line-height: 30px;
+    }
+    .download-area{
+        height: 750px;
+    }
+}
+
+/*   下载区域 end  */
+
+/*  多链钱包 start  */
+.multi-chain{
+    width: 100%;
+    min-width: 1300px;
+    height: 1080px;
+    background-image: url("../images/background-two.png");
+    background-size: 100% 100%;
+}
+.multi-chain-box{
+    width: 1300px;
+    height: 100%;
+    /*border: 1px solid #ccc;*/
+    margin: 0 auto;
+    display: flex;
+}
+.multi-chain-img{
+    width: 700px;
+    height: 700px;
+    background-image: url("../images/Multi-Chain.png");
+    background-size: 100% 100%;
+    margin-top: 184px;
+}
+.multi-chain-text{
+    margin-top: 450px;
+}
+.multi-chain-text p{
+    font-size: 24px;
+}
+.multi-chain-text p:nth-child(1){
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.multi-chain-text-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .multi-chain{
+        width: 100%;
+        min-width: 300px;
+        height: 650px;
+    }
+    .multi-chain-box{
+        width: 100%;
+        display: block;
+    }
+    .multi-chain-text{
+        display: none;
+    }
+    .multi-chain-text-mobile{
+        display: inline-block;
+    }
+    .multi-chain-text-mobile{
+        margin-top: 50px;
+        width: 100%;
+    }
+    .multi-chain-text p{
+        font-size: 15px;
+        text-align: center;
+        color: #707070;
+    }
+    .multi-chain-text p:nth-child(1){
+        font-size: 20px;
+        margin-bottom: 40px;
+        color: black;
+    }
+    .multi-chain-img{
+        width: 250px;
+        height: 250px;
+        margin: 30px auto;
+    }
+}
+
+/*  多链钱包 end  */
+
+/*  专业便捷 start  */
+.convenient{
+    width: 100%;
+    min-width: 1300px;
+    height: 1080px;
+}
+.convenient-box{
+    width: 1300px;
+    height: 100%;
+    /*border: 1px solid #ccc;*/
+    margin: 0 auto;
+    display: flex;
+}
+.convenient-box-text{
+    margin-top: 450px;
+    width: 550px;
+}
+.convenient-box-text p{
+    font-size: 24px;
+}
+.convenient-box-text p:nth-child(1){
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.convenient-box-img{
+    width: 700px;
+    height: 700px;
+    background-image: url("../images/security.png");
+    background-size: 100% 100%;
+    margin-top: 250px;
+}
+
+@media screen and (max-width: 480px) {
+    .convenient{
+        width: 100%;
+        min-width: 300px;
+        height: 560px;
+    }
+    .convenient-box{
+        width: 100%;
+        min-width: 300px;
+        height: 560px;
+        display: inline;
+    }
+    .convenient-box-text{
+        margin-top: 50px;
+    }
+    .convenient-box-text{
+        margin-top: 50px;
+        width: 100%;
+    }
+    .convenient-box-text p{
+        font-size: 15px;
+        text-align: center;
+        color: #707070;
+    }
+    .convenient-box-text p:nth-child(1){
+        font-size: 20px;
+        margin-bottom: 40px;
+        color: black;
+    }
+    .convenient-box-img{
+        width: 243px;
+        height: 184px;
+        margin: 30px auto;
+    }
+}
+
+/*  专业便捷 end  */
+
+/*  精选 DAPP start  */
+.selected-DAPP{
+    width: 100%;
+    min-width: 1300px;
+    height: 1080px;
+    background-image: url("../images/background-three.png");
+    background-size: 100% 100%;
+}
+.selected-DAPP-box{
+    width: 1300px;
+    height: 100%;
+    /*border: 1px solid #ccc;*/
+    margin: 0 auto;
+    display: flex;
+}
+.selected-DAPP-text{
+    margin-top: 450px;
+}
+.selected-DAPP-img{
+    width: 700px;
+    height: 700px;
+    background-image: url("../images/DAPP.png");
+    background-size: 100% 100%;
+    margin-top: 250px;
+}
+.selected-DAPP-text p{
+    font-size: 24px;
+}
+.selected-DAPP-text p:nth-child(1){
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.selected-DAPP-text-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .selected-DAPP{
+        width: 100%;
+        min-width: 300px;
+        height: 560px;
+    }
+    .selected-DAPP-box{
+        width: 100%;
+        min-width: 300px;
+        height: 560px;
+        display: inline;
+    }
+    .selected-DAPP-text{
+        display: none;
+    }
+
+    .selected-DAPP-text-mobile{
+        padding-top: 50px;
+        display: block;
+        margin-top: 0;
+        width: 100%;
+    }
+    .selected-DAPP-text-mobile p{
+        font-size: 15px;
+        text-align: center;
+        color: #707070;
+    }
+    .selected-DAPP-text-mobile p:nth-child(1){
+        font-size: 20px;
+        margin-bottom: 40px;
+        color: black;
+    }
+    .selected-DAPP-img{
+        width: 211px;
+        height: 227px;
+        margin: 30px auto;
+    }
+
+}
+
+/*  精选 DAPP end  */
+
+/*  底部的样式 start  */
+.bottom-box{
+    width: 100%;
+    min-width: 1300px;
+    height: 152px;
+    padding-top: 28px;
+}
+.bottom-content{
+    width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    color: #ccc;
+    justify-content: space-between;
+}
+.bottom-log-img{
+    width: 87px;
+    height: 26px;
+    background-image: url("../images/logo.png");
+    background-size: 100% 100%;
+}
+.bottom-content div p{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #9A9A9A;
+}
+.bottom-content div p:nth-child(1){
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: black;
+}
+.micro-blog{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/micro-blog.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.weChat{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/weChat.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .bottom-box{
+        min-width: 300px;
+        height: 120px;
+    }
+    .bottom-content{
+        width: 80%;
+    }
+    .bottom-log-img{
+        display: none;
+    }
+    .bottom-content div p{
+        font-size: 12px;
+    }
+    .bottom-content div p:nth-child(1){
+        font-size: 15px;
+    }
+    .micro-blog{
+        width: 25px;
+        height: 25px;
+    }
+    .weChat{
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/*  底部的样式 end  */

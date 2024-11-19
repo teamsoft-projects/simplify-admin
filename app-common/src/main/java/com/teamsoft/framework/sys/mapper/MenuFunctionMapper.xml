@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamsoft.framework.sys.mapper.MenuFunctionMapper">
+	<select id="listByEntity" resultType="MenuFunction">
+		SELECT *
+		FROM SYS_MENU_FUNCTION
+		<if test="entity.menuId != null">
+			WHERE MENU_ID=#{entity.menuId}
+		</if>
+		ORDER BY SORT_ORDER
+	</select>
+	<select id="get" resultType="MenuFunction">
+		SELECT *
+		FROM SYS_MENU_FUNCTION
+		WHERE ID = #{id}
+		LIMIT 1
+	</select>
+	<select id="getMenuFuncsWithMenuId" resultType="MenuFunction">
+		SELECT FUNC.*
+		FROM SYS_MENU_FUNCTION FUNC
+			     INNER JOIN SYS_ROLE_MENU_FUNCTION ROLEFUNC ON FUNC.ID = ROLEFUNC.FUNC_ID
+		WHERE ROLEFUNC.ROLE_ID = #{roleId}
+		ORDER BY FUNC.SORT_ORDER
+	</select>
+	<insert id="saveAll">
+		INSERT INTO SYS_MENU_FUNCTION
+		(ID, MENU_ID, IDENTIFY, NAME, ICON, DESCRIPTION, URL, SORT_ORDER, CREATE_TIME)
+		VALUES
+		<foreach collection="entities" item="entity" separator=",">
+			(#{entity.id}, #{entity.menuId}, #{entity.identify}, #{entity.name}, #{entity.icon}, #{entity.description}, #{entity.url}, #{entity.sortOrder}, NOW())
+		</foreach>
+	</insert>
+	<delete id="removeByEntity">
+		DELETE
+		FROM SYS_MENU_FUNCTION
+		WHERE MENU_ID = #{entity.menuId}
+	</delete>
+	<update id="updateAll">
+		<foreach collection="entities" item="entity" separator=";">
+			update SYS_MENU_FUNCTION set `identify`=#{entity.identify} where id=#{entity.id}
+		</foreach>
+	</update>
+</mapper>

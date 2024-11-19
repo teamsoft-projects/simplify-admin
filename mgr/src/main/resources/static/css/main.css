@@ -1,0 +1,990 @@
+.query-area {
+    position: absolute;
+    left: -1000px;
+    opacity: 0;
+}
+
+.query-form {
+    padding-top: 10px;
+}
+
+.query-form > dl > dt {
+    display: inline-block;
+    width: 68px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.query-form > dl > dd {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+    font-size: 0;
+}
+
+.query-form > dl > dd input {
+    display: inline-block;
+    height: 25px;
+    font-size: 12px;
+}
+
+.query-form > dl > dd input.layui-range {
+    width: 55px;
+    margin-right: 10px;
+}
+
+.query-form > dl > dd input.layui-range:last-of-type {
+    margin-right: 0;
+}
+
+.query-form > dl > dd div {
+    font-size: 12px;
+}
+
+.query-form .layui-btn {
+    height: 25px;
+    line-height: 25px;
+    width: 120px;
+}
+
+.query-form .layui-form-select dl {
+    top: 28px;
+}
+
+.query-form .layui-form-selected {
+    color: #000;
+}
+
+.query-form-big > dl > dd {
+    width: 164px;
+}
+
+.query-form-big .layui-input {
+    width: 164px;
+    padding-left: 5px;
+}
+
+.query-form-big .input-range {
+    width: 77px;
+    margin-right: 10px;
+}
+
+.query-form-big .input-range:last-of-type {
+    margin-right: 0;
+}
+
+.query-form-big .layui-btn {
+    width: 164px;
+}
+
+.query-form-huge > dl > dd {
+    width: 246px;
+}
+
+.query-form-huge .layui-input {
+    width: 246px;
+}
+
+.query-form-huge > dl > dd input.layui-range {
+    width: 118px;
+}
+
+/* 地图相关 */
+.self-baidu-map {
+    border: 1px solid #999999;
+    width: calc(100% - 46px);
+    margin-left: 46px;
+    height: 300px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.map-full-width {
+    width: 100%;
+    margin-left: 0;
+    height: 400px;
+    box-shadow: none;
+}
+
+.self-input-double .layui-input {
+    display: inline-block;
+    width: calc(100% - 100px);
+}
+
+.self-input-double .self-input-btn {
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 4px;
+}
+
+.ellipsis {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+}
+
+.w150 {
+    width: 150px;
+}
+
+.update-password {
+}
+
+.update-password .update-password-title {
+    text-align: center;
+    color: #009688;
+    margin: 20px;
+}
+
+.update-password .update-password-block {
+    text-align: center;
+}
+
+.update-password .update-password-block > div {
+    margin: 10px 50px;
+}
+
+.update-password .update-password-block input {
+    width: 200px;
+}
+
+.update-password .update-password-block button {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/*眼镜调拨*/
+.allotAreaTemplate {
+}
+
+.allotAreaTemplate .allotAreaTemplate-title {
+    text-align: center;
+    color: #009688;
+    margin: 20px;
+}
+
+.allotAreaTemplate .allotAreaTemplate-block {
+    text-align: center;
+}
+
+.allotAreaTemplate .allotAreaTemplate-block > div {
+    margin: 10px 50px;
+}
+
+.allotAreaTemplate .allotAreaTemplate-block select {
+    width: 140px;
+}
+
+.allotAreaTemplate .allotAreaTemplate-block input {
+    width: 130px;
+    height: 32px;
+}
+
+.allotAreaTemplate .allotAreaTemplate-block button {
+    width: 120px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.allotAreaTemplate .allotAreaTemplate-block label {
+    position: relative;
+    float: left;
+    display: block;
+    padding: 5px 15px;
+    width: 40px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+.word-info {
+    color: #16ac1b;
+}
+
+.word-off {
+    color: #7b7b7b;
+}
+
+.word-warning {
+    color: #FFB800;
+}
+
+.word-error {
+    color: #ff3324;
+}
+
+.word-complete {
+    color: #3c75ff;
+}
+
+.word-out {
+    color: #d621ef;
+}
+
+.word-unapparent {
+    color: #3c3c3c;
+}
+
+.fa {
+    width: 18px;
+}
+
+.self-image-mini {
+    max-width: 200px;
+    max-height: 60px;
+}
+
+.hide {
+    display: none;
+}
+
+.faq {
+    padding: 20px;
+}
+
+.right {
+    float: right;
+}
+
+.notice {
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.inner-window {
+    padding: 18px 15px;
+}
+
+.inner-window .inner-window-btn {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.inner-window .inner-window-btn a {
+    padding: 0 15px;
+}
+
+div.laytable-cell-checkbox {
+    padding: 0 15px;
+}
+
+div.tips {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+div.tips span {
+    color: #fff;
+}
+
+.layui-laypage .layui-laypage-count {
+    background: none;
+}
+
+.layui-laypage .layui-laypage-skip {
+    background: none;
+}
+
+.sys-configs .layui-form-label {
+    width: 150px;
+}
+
+.sys-configs .layui-input-block {
+    margin-left: 190px;
+}
+
+div.page-portal {
+    margin-left: -20px;
+    margin-top: 20px;
+}
+
+.layui-nodata {
+    text-align: center;
+    padding: 25px 0;
+    font-size: 16px;
+}
+
+.layui-form-selected dl {
+    z-index: 10000;
+}
+
+.image-area {
+    position: relative;
+    display: inline-block;
+    margin: 10px 30px 0 0;
+}
+
+.image-area .image {
+    max-width: 320px;
+    max-height: 240px;
+}
+
+.image-area .close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.fubt-buy {
+    color: #d45849;
+}
+
+.fubt-sell {
+    color: #129663;
+}
+
+.admin-login-box {
+    position: absolute;
+}
+
+.center-notice {
+    position: absolute;
+    left: 260px;
+    margin: 0 auto;
+    float: left;
+    width: calc(100% - 696px);
+    text-align: center;
+    color: #ffffff;
+    height: 45px;
+}
+
+.center-notice .content {
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+}
+
+.center-notice .normal {
+    color: #129663;
+}
+
+.center-notice .error {
+    color: #d45849;
+}
+
+.center-notice .place {
+    display: inline-block;
+    width: 35px;
+}
+
+.transaction-form .layui-form-checkbox {
+    margin-top: -8px;
+}
+
+.unvisible-copyinput {
+    position: absolute;
+    left: -10000px;
+    height: 0;
+}
+
+/* 自动触发 */
+.main-panel .inner-panel {
+    padding: 8px;
+    background-color: #F2F2F2;
+}
+
+.main-panel .layui-card-header {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.main-panel .trigger-log {
+    overflow: hidden;
+}
+
+.main-panel .log-output {
+    overflow-y: scroll;
+    height: 276px;
+}
+
+.main-panel .half-input {
+    margin-right: 20px;
+    width: calc(50% - 65px);
+}
+
+.main-panel .layui-form-item .half-input:last-of-type, .main-panel .layui-form-item .half-inline:last-of-type {
+    margin-right: 0;
+}
+
+.main-panel .layui-form-item .half-inline {
+    width: calc(50% - 8px);
+}
+
+.main-panel .trigger-btns .layui-btn {
+    padding: 0 25px;
+}
+
+.main-panel .trigger-monitor {
+    height: 380px;
+    overflow-y: scroll;
+}
+
+.main-panel .data-switch {
+    position: absolute;
+    font-weight: normal;
+}
+
+.main-panel .trigger-progress {
+    position: absolute;
+}
+
+.main-panel .trigger-monitor blockquote > div {
+    display: inline-block;
+    border-right: 1px solid #bbb;
+    margin-right: 5px;
+    padding-right: 5px;
+}
+
+.main-panel .trigger-monitor blockquote > div:last-of-type {
+    border: none;
+}
+
+.main-panel .trigger-monitor {
+    font-family: Consolas, Monaco, monospace;
+}
+
+.main-panel .pending {
+    color: #1d70ff;
+}
+
+.main-panel .error {
+    color: #ff2340;
+}
+
+.main-panel .success {
+    color: #1ed724;
+}
+
+.inner-window .layui-form-label {
+    width: 101px;
+}
+
+.inner-window .layui-input-block {
+    margin-left: 134px;
+}
+
+.admin-table .image-list {
+    max-width: 170px;
+    max-height: 50px;
+}
+
+.mgr-logo {
+    height: 45px;
+    width: 200px;
+    margin-top: 5px;
+    background: url("/static/images/logo.png") no-repeat -20px 1px;
+}
+
+.layui-form-item .layui-input-inline {
+    width: 290px;
+}
+
+.admin-login-box .layui-logo {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mainBox {
+    width: 100%;
+}
+
+.main-container {
+    margin: 25px;
+    min-height: 120px;
+}
+
+.main-container .layui-form-item {
+    margin-bottom: 15px !important;
+    margin-top: 10px !important;
+}
+
+.bottom {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #F8F8F8;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+
+.button-container {
+    position: absolute;
+    right: 10px;
+}
+
+.layui-layout-admin .layui-body {
+    background-color: whitesmoke;
+}
+
+.admin-table-page {
+    position: static;
+    background-color: inherit;
+    border-bottom: none;
+}
+
+.admin-table-page .page {
+    padding-left: 0;
+}
+
+.layui-input-inline.query-inline {
+    width: 190px;
+}
+
+.layui-btn-prefer {
+    background-color: #36b368;
+}
+
+.main-page .query-card {
+    padding: 15px 15px 0;
+}
+
+.main-page .query-card .layui-inline:last-of-type {
+    margin-left: 50px;
+}
+
+.main-page .layui-form-item .layui-inline {
+    margin-bottom: 15px;
+}
+
+.main-page .query-card .layui-form-item {
+    margin-bottom: 0;
+}
+
+.main-page .admin-table thead tr > th:first-of-type {
+    width: 30px;
+}
+
+.auto-render-table .layui-table {
+    margin: 0;
+}
+
+.admin-table {
+    margin: 10px 0;
+}
+
+.layui-card.no-shadow {
+    box-shadow: none;
+}
+
+.top-panel {
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+}
+
+.top-panel .layui-card-header {
+    font-size: 18px;
+    color: #787575;
+}
+
+.top-panel .top-panel-number {
+    line-height: 60px;
+    font-size: 29px;
+    color: #28333E;
+    border-right: 1px solid #eceff9;
+}
+
+.top-panel .hover-btn {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    display: none;
+}
+
+.top-panel.sms-balance:hover .hover-btn {
+    display: block;
+}
+
+.layui-form .input-extras {
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #595656;
+}
+
+.layui-form .range-input .layui-input-inline {
+    width: 83px;
+}
+
+.layui-form .range-input .layui-form-mid {
+    width: 4px;
+}
+
+.layui-form .three-input .layui-input-inline {
+    width: 171px;
+}
+
+.layui-form .three-input .layui-input-inline:first-of-type {
+    margin-right: 11px;
+}
+
+.layui-form .edit-three-input .layui-input-inline {
+    width: calc(33.3333333333333% - 7px);
+}
+
+.layui-form .edit-three-input .layui-input-inline:last-of-type {
+    margin-right: 0;
+}
+
+.layui-form .edit-two-input .layui-input-inline {
+    width: calc(50% - 5px);
+}
+
+.layui-form .edit-two-input .layui-input-inline:last-of-type {
+    margin-right: 0;
+}
+
+.layui-table td.fix-width div {
+    overflow-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.layui-table td.w150, .layui-table td.w150 div {
+    width: 150px;
+}
+
+.layui-form .layui-input-block {
+    margin-left: 130px;
+}
+
+.layui-form .show-item .layui-input-inline {
+    width: 190px;
+}
+
+.layui-form .show-item label {
+    font-size: 16px;
+    color: #5d5d5d;
+}
+
+.layui-form .show-item .show-detail {
+    height: 38px;
+    line-height: 36px;
+    font-size: 18px;
+    color: #292929;
+    font-weight: 540;
+}
+
+.layui-tab .detail-back {
+    position: absolute;
+    right: 14px;
+    top: 5px;
+    z-index: 1000;
+}
+
+.layui-form .show-item .layui-badge {
+    padding: 3px 9px;
+}
+
+.layui-nav-tree .layui-nav-more {
+    right: auto;
+}
+
+.layui-tab-title li .layui-tab-close {
+    color: #ffffff;
+}
+
+.func-btns {
+    padding-bottom: 10px;
+}
+
+.deal-area {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.order-table {
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.order-table .order-title {
+    color: #aaaaaa;
+    background-color: #f5f5f5;
+}
+
+.order-table .order-title td {
+    padding: 8px;
+    position: relative;
+}
+
+.order-table .order-title td > span {
+    display: inline-flex;
+}
+
+.order-table .order-title .deal-time {
+    margin-right: 20px;
+}
+
+.order-table .order-title .member {
+    margin-right: 30px;
+}
+
+.order-table .order-title .remark {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 70%;
+}
+
+.order-table .order-title .name {
+    color: #333333;
+}
+
+.order-table .order-title .total {
+    position: absolute;
+    right: 10px;
+}
+
+.order-table .order-content {
+    border-bottom: 1px solid #e5e5e5;
+    color: #aaaaaa;
+}
+
+.order-table .order-content .name {
+    color: #333333;
+}
+
+.order-table .order-content td {
+    padding: 8px;
+}
+
+.order-table .order-content .order-name {
+    font-size: 16px;
+    margin-right: 30px;
+    color: #333333;
+    width: 185px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.order-table .order-content td > span {
+    display: inline-block;
+}
+
+.order-table .order-content .refund-btn {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+    top: 5px;
+}
+
+.remind-sms {
+    margin-top: 25px;
+}
+
+.remind-sms .to-right {
+    margin-left: 70px;
+}
+
+.remind-sms .sms-notice {
+    font-size: 16px;
+    display: inline-block;
+    width: 60px;
+}
+
+.remind-sms .input-label {
+    margin-right: 10px;
+    width: 56px;
+    display: inline-block;
+    text-align: left;
+}
+
+.remind-sms .input-label-long {
+    width: 95px;
+}
+
+.remind-sms .param-item .param-label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 64px;
+}
+
+.remind-sms .param-item .layui-select-title {
+    width: 182px;
+}
+
+.remind-sms .param-item .param-value {
+    width: 212px;
+}
+
+.remind-sms .sms-template-textarea {
+    width: 736px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.remind-sms .sub-textarea {
+    width: calc(100% - 64px);
+}
+
+.remind-sms .right-align {
+    margin-left: 64px;
+}
+
+.remind-sms .sms-template-textarea textarea {
+    resize: none;
+    min-height: 70px;
+}
+
+.remind-sms .remark {
+    vertical-align: top;
+    margin-top: 14px;
+}
+
+.remind-sms .bottom-btns {
+    text-align: right;
+    margin: 15px 15px 15px 0;
+}
+
+.data-render-table .layui-table-cell {
+    height: 50px;
+    line-height: 40px;
+}
+
+.sys-config .layui-form-label {
+    width: 190px;
+}
+
+.sys-config .layui-input-block {
+    margin-left: 220px;
+}
+
+.layui-layer-content textarea {
+    resize: none;
+}
+
+.layer-bottom-btns {
+    position: absolute;
+    bottom: 15px;
+}
+
+.layer-follow-add {
+    height: 460px;
+    overflow-y: auto;
+}
+
+.layer-sms-param-sm {
+    margin-left: 64px;
+}
+
+.layer-follow-add .remind-sms .param-item .layui-select-title {
+    width: 195px;
+}
+
+.layer-follow-add .remind-sms .param-item .param-value {
+    width: 249px;
+}
+
+.layer-follow-add .layui-input-block {
+    width: 785px;
+}
+
+.layer-sms-param-sm .param-item:last-of-type {
+    padding-bottom: 140px;
+}
+
+.layer-sms-param-sm .param-value-block {
+    display: inline-block;
+}
+
+.load-btn {
+    min-width: 98px;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 175px;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    color: rgb(243, 9, 9);
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    transform: scale(1) rotateZ(-35deg);
+    transition: all;
+}
+
+.circle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px dotted rgba(0, 0, 0, 0.2);
+}
+
+.required {
+    color: #f00;
+}
+
+.required:after {
+    content: "*";
+}
+
+.sms-member-count {
+    line-height: 36px;
+    font-size: 16px;
+    color: #625d5d;
+}
+
+.p15 {
+    padding: 15px;
+}
+
+.pb0 {
+    padding-bottom: 0;
+}
+
+.pb15 {
+    padding-bottom: 15px;
+}
+
+.pb25 {
+    padding-bottom: 25px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.plr120 {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.mb0 {
+    margin-bottom: 0;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}

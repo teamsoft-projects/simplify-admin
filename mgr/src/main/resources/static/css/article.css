@@ -1,0 +1,32 @@
+body {
+    font-family: Microsoft YaHei, STHeiti, serif;
+}
+
+.message-details {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.message-details-title {
+    text-align: center;
+    width: 700px;
+    margin: 20px auto;
+    font-size: 25px;
+}
+
+.publisher {
+    display: flex;
+    color: #ccc;
+}
+
+@media screen and (max-width: 480px) {
+    .message-details {
+        width: 100%;
+    }
+
+    .message-details-title {
+        width: 100%;
+        text-align: left;
+        font-size: 21px;
+    }
+}

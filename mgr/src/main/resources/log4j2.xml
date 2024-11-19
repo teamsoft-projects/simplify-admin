@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<configuration status="WARN">
+	<!-- 配置属性 -->
+	<Properties>
+		<property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class.%M(%F:%L) - %msg%xEx%n</property>
+		<Property name="LOG_FILE_PREFIX">logs</Property>
+		<Property name="FILENAME_ERROR">error.log</Property>
+		<Property name="FILENAME_DEBUG">debug.log</Property>
+	</Properties>
+	<Appenders>
+		<!--输出控制台的配置-->
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<ThresholdFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="${PATTERN}"/>
+		</Console>
+		<!-- 错误日志 -->
+		<RollingFile name="ERROR_ROLLING_FILE" fileName="${LOG_FILE_PREFIX}/${FILENAME_ERROR}" filePattern="${LOG_FILE_PREFIX}/$${date:yyyy-MM}/error_%d{yyyyMMdd}.log">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="${PATTERN}"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="25 MB"/>
+			</Policies>
+		</RollingFile>
+		<!-- DEBUG日志 -->
+		<RollingFile name="DEBUG_ROLLING_FILE" fileName="${LOG_FILE_PREFIX}/${FILENAME_DEBUG}" filePattern="${LOG_FILE_PREFIX}/$${date:yyyy-MM}/debug_%d{yyyyMMdd}.log">
+			<ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="${PATTERN}"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="25 MB"/>
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<!--建立默认的root的logger-->
+		<Root level="INFO">
+			<AppenderRef ref="CONSOLE"/>
+			<AppenderRef ref="ERROR_ROLLING_FILE"/>
+			<AppenderRef ref="DEBUG_ROLLING_FILE"/>
+		</Root>
+		<!-- normal -->
+		<logger name="org.springframework" level="ERROR"/>
+		<logger name="org.apache.http" level="ERROR"/>
+		<logger name="springfox.documentation.spring" level="ERROR"/>
+		<logger name="org.hibernate.validator" level="ERROR"/>
+		<!-- mybatis loggers -->
+		<logger name="org.mybatis" level="ERROR"/>
+		<logger name="org.apache.ibatis" level="ERROR"/>
+		<!-- sql loggers -->
+		<logger name="java.sql.Connection" level="DEBUG" additivity="true"/>
+		<logger name="java.sql.Statement" level="DEBUG" additivity="true"/>
+		<logger name="java.sql.PreparedStatement" level="DEBUG" additivity="true"/>
+		<logger name="java.sql.ResultSet" level="DEBUG" additivity="true"/>
+		<logger name="com.teamsoft.framework" level="DEBUG" additivity="true"/>
+		<logger name="com.teamsoft.mgr" level="DEBUG" additivity="true"/>
+		<logger name="org.quartz" level="ERROR"/>
+	</Loggers>
+</configuration>
